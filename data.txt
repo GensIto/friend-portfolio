@@ -2,17 +2,12 @@ microCMS
 gmail: gensito1121@gmail.com
 Pas: (dd&ZzXW4DrN-QCD~!UAMAvQ
 
-dashboard
+github
+https://github.com/GensIto/friend-portfolio
+
+background dashboard
 https://etrwdrzmrv.microcms.io/apis/works
 
+front dashboard
+https://friend-portfolio-vert.vercel.app/
 
-createdAt: "2022-08-18T01:36:17.897Z"
-genre: ['interview']
-id: "w0co7ut5k"
-iframe: "<iframe class=\"embedly-embed\" src=\"https://cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2Fw1afsOS5KGI%3Ffeature%3Doembed&display_name=YouTube&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3Dw1afsOS5KGI&image=https%3A%2F%2Fi.ytimg.com%2Fvi%2Fw1afsOS5KGI%2Fhqdefault.jpg&key=94335756f04b424b8ce3ce71cbe3de0a&type=text%2Fhtml&schema=youtube\" width=\"560\" height=\"315\" scrolling=\"no\" title=\"YouTube embed\" frameborder=\"0\" allow=\"autoplay; fullscreen\" allowfullscreen=\"true\"></iframe><p><br></p>"
-img: {url: 'https://images.microcms-assets.io/assets/df658e492…f6dd40/ba200cd604324d7bba457f501cc3d4b0/dummy.jpg', height: 534, width: 800}
-publishedAt: "2022-08-18T01:36:17.897Z"
-revisedAt: "2022-08-18T01:41:48.948Z"
-title: "interviewテスト"
-updatedAt: "2022-08-18T01:41:48.948Z"
-url: "https://www.google.com/?hl=ja"
