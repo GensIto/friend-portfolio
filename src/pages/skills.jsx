@@ -41,6 +41,14 @@ export default function Skills() {
                 alt='photoshop'
               />
             </li>
+            <li className='w-24'>
+              <Image
+                src='/images/skills/davinci.jpg'
+                height='1024'
+                width='1024'
+                alt='DaVinci Resolve'
+              />
+            </li>
           </ul>
         </Container>
       </Section>
