@@ -13,8 +13,8 @@ export default function ArtWork({ work }) {
             {work.map((work) => {
               if (work.genre == "artworks") {
                 return (
-                  <li className='mt-6' key={work.id}>
-                    {work.img.url ? <img src={work.img.url} /> : ""}
+                  <li className='mt-6 w-full' key={work.id}>
+                    {work.img ? <StyledImg src={work.img.url} /> : ""}
                     {work.iframe ? (
                       <YoutubeBox
                         dangerouslySetInnerHTML={{
@@ -22,7 +22,7 @@ export default function ArtWork({ work }) {
                         }}
                       />
                     ) : (
-                      ""
+                      <></>
                     )}
                     <h1 className='text-gray text-md md:text-lg'>
                       {work.title}
@@ -35,7 +35,7 @@ export default function ArtWork({ work }) {
                         <p className='text-gray text-sm md:text-md'>みる</p>
                       </a>
                     ) : (
-                      ""
+                      <></>
                     )}
                   </li>
                 );
@@ -58,9 +58,15 @@ const YoutubeBox = styled.div`
   }
 `;
 
+const StyledImg = styled.img`
+  width: 100%;
+  aspect-ratio: 16 / 9;
+`;
+
 export const getStaticProps = async () => {
   const data = await client.get({
     endpoint: "works",
+    queries: { limit: 100 },
   });
 
   return {

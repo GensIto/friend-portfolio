@@ -1,7 +1,9 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import styled from "styled-components";
 
 export const WorksNavbar = () => {
+  const router = useRouter();
   return (
     <nav className='w-screen'>
       <ul className='flex justify-between items-center px-4'>
@@ -22,7 +24,9 @@ export const WorksNavbar = () => {
         </li>
       </ul>
       <h2 className='text-xl sm:text-2xl text-center my-6 font-normal'>
-        Category
+        {router.pathname == "/works" ? "Category" : ""}
+        {router.pathname == "/works/jobs" ? "Jobs" : ""}
+        {router.pathname == "/works/artworks" ? "ArtWorks" : ""}
       </h2>
       <ul className='flex justify-center items-center'>
         <WorksNav className='w-1/4 min-w-max text-center p-1'>

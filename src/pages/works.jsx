@@ -12,8 +12,8 @@ export default function Works({ work }) {
           <ul className='flex items-center justify-center flex-col gap-8'>
             {work.map((work) => {
               return (
-                <li key={work.id}>
-                  {work.img.url ? <img src={work.img.url} /> : ""}
+                <li className='w-full' key={work.id}>
+                  {work.img ? <StyledImg src={work.img.url} /> : <></>}
                   {work.iframe ? (
                     <YoutubeBox
                       dangerouslySetInnerHTML={{
@@ -21,7 +21,7 @@ export default function Works({ work }) {
                       }}
                     />
                   ) : (
-                    ""
+                    <></>
                   )}
                   <h1 className='text-gray text-md md:text-lg'>{work.title}</h1>
                   <p className='text-gray text-md md:text-lg'>
@@ -32,7 +32,7 @@ export default function Works({ work }) {
                       <p className='text-gray text-sm md:text-md'>みる</p>
                     </a>
                   ) : (
-                    ""
+                    <></>
                   )}
                 </li>
               );
@@ -53,9 +53,15 @@ const YoutubeBox = styled.div`
   }
 `;
 
+const StyledImg = styled.img`
+  width: 100%;
+  aspect-ratio: 16 / 9;
+`;
+
 export const getStaticProps = async () => {
   const data = await client.get({
     endpoint: "works",
+    queries: { limit: 100 },
   });
 
   return {

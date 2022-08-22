@@ -6,7 +6,7 @@ import styled from "styled-components";
 
 export default function Jobs({ work }) {
   return (
-    <WorksLayout title='works | job'>
+    <WorksLayout title='works | artworks'>
       <Section top='sm' bottom='sm'>
         <Container size=''>
           <ul className='flex items-center justify-center flex-col gap-8'>
@@ -14,8 +14,8 @@ export default function Jobs({ work }) {
               if (work.genre == "artworks") return;
               if (work.genre == "jobs") {
                 return (
-                  <li className='mt-6' key={work.id}>
-                    {work.img.url ? <img src={work.img.url} /> : ""}
+                  <li className='mt-6 w-full' key={work.id}>
+                    {work.img ? <StyledImg src={work.img.url} /> : ""}
                     {work.iframe ? (
                       <YoutubeBox
                         dangerouslySetInnerHTML={{
@@ -23,7 +23,7 @@ export default function Jobs({ work }) {
                         }}
                       />
                     ) : (
-                      ""
+                      <></>
                     )}
                     <h1 className='text-gray text-md md:text-lg'>
                       {work.title}
@@ -36,7 +36,7 @@ export default function Jobs({ work }) {
                         <p className='text-gray text-sm md:text-md'>みる</p>
                       </a>
                     ) : (
-                      ""
+                      <></>
                     )}
                   </li>
                 );
@@ -58,9 +58,15 @@ const YoutubeBox = styled.div`
   }
 `;
 
+const StyledImg = styled.img`
+  width: 100%;
+  aspect-ratio: 16 / 9;
+`;
+
 export const getStaticProps = async () => {
   const data = await client.get({
     endpoint: "works",
+    queries: { limit: 100 },
   });
 
   return {
